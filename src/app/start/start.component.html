@@ -1,0 +1,65 @@
+<div class="text-center" style="padding: 10px 0">
+  <form id="timeform" (submit)="(onDateSubmit())">
+    <div class="main-time-form">
+    <div class="time-group">
+      <div class="form-group">
+        <label for="inputEmail" class="sr-only">Start Date :</label>
+        <input type="date" class="form-control" id="startdate" [(ngModel)]="startdate" name="startdate">
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="sr-only">End Date :</label>
+        <input type="date" class="form-control" id="enddate" [(ngModel)]="enddate" name="enddate">
+      </div>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Show Astroit">
+     </div>
+   </form>
+</div>
+<div *ngIf="showTable" class="container">
+  <div class="row">
+    <div class="col">
+        <table style="border: 2px; border-color: black; " datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+            <thead>
+                <tr>
+                <th>Datum</th>
+                <th>Ime</th>
+                <th>Brzina Kretanja</th>
+                <th>MinPrecnik</th>
+                <th>Max Precnik</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let obj of list" style="text-align: center">
+                <ng-container *ngIf="obj.is_potentially_hazardous_asteroid">
+                  <td>{{obj.close_approach_data[0].close_approach_date}}</td>
+                  <td>{{obj.name}}</td>
+                  <td>{{obj.close_approach_data[0].relative_velocity.kilometers_per_hour}}</td>
+                  <td>{{obj.estimated_diameter.kilometers.estimated_diameter_max}}</td>
+                  <td>{{obj.close_approach_data[0].close_approach_date}}</td>
+                </ng-container>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  </div>
+  <div class="boxes" *ngIf="showSection">
+    <table style="border-style: solid">
+      <thead>
+        <th>Astroit Name</th>
+        <th></th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let name of chartArr">
+        <td style="font-size: 12px;">{{name.name}}</td>
+        <td style="width: 8px"><img class="image" [src]="images" alt="" (click)="deleteRow(name)" /></td>
+      </tr>
+    </tbody>
+    </table>
+   </div>
+   <div class="box" *ngIf="showSection">
+      <input class="btn" type="submit" value="Broj Prolozeka pored Zemlije" (click)="openPage()">
+   </div>
+ 
+
+

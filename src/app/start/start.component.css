@@ -1,0 +1,81 @@
+.form-control {
+    border: 50;
+    background: transparent;
+    color: #555555;
+    padding: 7px 20px;
+    font-weight: bold;
+    height:auto;
+    width: 150px;
+  }
+.sr-only{
+    width: 90px;
+}
+
+  .form-group {
+    margin-bottom: 5px;
+    padding-right: 2px;
+    margin-left: 10px;
+    position: relative;
+  }
+
+  .form-group label, .form-group input{
+    float: none; 
+    display: inline-block;
+    vertical-align: middle; 
+  }
+  .btn{
+      margin-top: 20px;
+  }
+  .btn-primary{
+     margin-left: 200px;
+  }
+
+  .btn-secondary{
+      margin-top: 5px;
+      margin-right: 30px;
+  }
+  .dataTables_empty {
+    display: none;
+  }
+
+  .boxes{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 30px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  .image{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+
+
+  .box{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    width: 100%;
+  }
+.dataTables_empty {
+  display: none;
+}
+
+.example-full-width {
+  width: 100%;
+  border-style: solid;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.row{
+    margin-top: 50px;
+}
+.container{
+    margin-top: 50px;
+}
